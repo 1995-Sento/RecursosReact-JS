@@ -1,0 +1,55 @@
+import React, {Component} from "react"
+ 
+
+class LoginButton extends Component  {
+    render () {
+        return <button>Iniciar Sesion</button>
+    }
+}
+
+class LogOutButton extends Component  {
+    render () {
+        return (
+            <div>
+                <p>Bienvenido Jarvis</p>
+                <button>Verrar Sesion</button>
+            </div>
+        )
+    }
+}
+
+/*function useConditionalRendering (isUserLogged){
+    if(isUserLogged){
+    return<ComponentA></ComponentA> 
+}
+    return<ComponentB />
+}*/
+
+       
+export default class ConditionalSection extends Component{
+    constructor () {
+        super()
+        this.state = { isUserLogged: true}
+    }
+
+render (){
+    //en esta variable guardamos el resultado de use conditional rendering
+   //const conditionalComponent = useConditionalRendering(this.state.mostrarA)
+    return (
+        <div>
+            <h4>Conditional Rendering</h4>
+            {
+                //las llaves se ponen siempre que te refieras a una variable
+             // {conditionalComponent} OjO-> estas llaves se pondrian sin las de fuera
+             
+             
+             //Este ejemplo es el que mas se utiliza 
+             this.state.isUserLogged
+                ? <LoginButton />
+                : <LogOutButton />
+            }
+        </div>
+    )
+}
+
+}

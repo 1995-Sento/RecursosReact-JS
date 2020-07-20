@@ -1,0 +1,50 @@
+import React, {Component} from "react"
+ 
+
+class ComponentA extends Component  {
+    render () {
+        return <p>Componente A</p>
+    }
+}
+
+class ComponentB extends Component  {
+    render () {
+        return <p>Componente B</p>
+    }
+}
+
+function useConditionalRendering (mostrarA){
+    if(mostrarA){
+    return<ComponentA></ComponentA> 
+}
+    return<ComponentB />
+}
+
+       
+export default class ConditionalSection extends Component{
+    constructor () {
+        super()
+        this.state = { mostrarA: false}
+    }
+
+render (){
+    //en esta variable guardamos el resultado de use conditional rendering
+   //const conditionalComponent = useConditionalRendering(this.state.mostrarA)
+    return (
+        <div>
+            <h4>Conditional Rendering</h4>
+            {
+                //las llaves se ponen siempre que te refieras a una variable
+             // {conditionalComponent} OjO-> estas llaves se pondrian sin las de fuera
+             
+             
+             //Este ejemplo es el que mas se utiliza 
+             this.state.mostrarA
+                ? <ComponentA />
+                : <ComponentB />
+            }
+        </div>
+    )
+}
+
+}

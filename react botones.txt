@@ -1,0 +1,16 @@
+import React, { Component } from 'react';
+//Esto hace un evento nuevo desde el boton
+/*
+class App extends Component{
+  render (){
+    return(
+      <div className='App'>
+        <h4>Eventos</h4>
+        <button onClick={()=> alert('hi Here!')}>HI THERE!</button>
+      </div>
+    );
+  }
+}
+*/
+
+export default App;
